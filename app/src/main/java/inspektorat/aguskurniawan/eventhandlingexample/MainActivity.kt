@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.snackbar.Snackbar
 import inspektorat.aguskurniawan.eventhandlingexample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -23,6 +24,10 @@ class MainActivity : AppCompatActivity() {
                 "Hello World",
                 Toast.LENGTH_LONG
             ).show()
+        }
+        binding.btnDisplayMessage.setOnLongClickListener {
+            Snackbar.make(binding.rootLayout, "Long Click", Snackbar.LENGTH_LONG).show()
+            true
         }
     }
 }
